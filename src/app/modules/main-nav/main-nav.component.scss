@@ -1,0 +1,44 @@
+.main-nav .nav-link {
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .navbar-expand-md .navbar-brand {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .navbar-bottom .navbar-nav li {
+        width: 100%;
+    }
+
+    .navbar-bottom ul li {
+        padding-bottom: 0;
+    }
+
+    .main-nav .nav-link {
+        text-align: left;
+        padding-left: 20px;
+    }
+
+    .navbar-bottom {
+        padding-bottom: 10px;
+    }
+}
+
+.dropdown-menu {
+    background-color: #383838;
+    margin: 0;
+    border: none;
+}
+
+.dropdown-item {
+    color: #EBEBEB;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background: linear-gradient(180deg, #CC0001 0%, #A00A19 100%);
+
+}

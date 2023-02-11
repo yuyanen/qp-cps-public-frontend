@@ -1,0 +1,67 @@
+<nav class="navbar navbar-bottom navbar-expand-md py-0">
+    <div class="container">
+        <a role="button" class="navbar-brand m-2 ml-3 text-white font-weight-bold" (click)="isMenuCollapsed = !isMenuCollapsed" (click)="false">HDB Place2Lease</a>
+
+        <button class="navbar-toggler text-white mr-3" aria-label="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
+            <em class="fas fa-caret-down"></em>
+        </button>
+        <div id="navbarContent" [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
+            <ul class="navbar-nav w-100 align-items-stretch nav-fill main-nav">
+                <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a role="button" class="nav-link" routerLink="" (click)="isMenuCollapsed = true">
+                        HDB Place2Lease
+                    </a>
+                </li>
+                <li class="nav-item" routerLinkActive="active">
+                    <a class="nav-link" [routerLink]="cnst.FrontEndUrl.VIEW_PROPERTIES" (click)="isMenuCollapsed = true">
+                        View Properties
+                    </a>
+                </li>
+                <li class="nav-item" ngbDropdown routerLinkActive="active">
+                    <a role="button" (click)="false" class="nav-link dropdown-toggle" ngbDropdownToggle>
+                        View Results
+                    </a>
+                    <div ngbDropdownMenu class="dropdown-menu">
+                        <a ngbDropdownItem [routerLink]="cnst.FrontEndUrl.EBID_RESULT_LIST" (click)="isMenuCollapsed = true">E-bidding</a>
+                        <a ngbDropdownItem [routerLink]="cnst.FrontEndUrl.PQM_RESULT_LIST" (click)="isMenuCollapsed = true">PQM / Price Only</a>
+                    </div>
+                </li>
+                <li class="nav-item" routerLinkActive="active">
+                    <a class="nav-link" [routerLink]="cnst.FrontEndUrl.UPCOMING_UNITS" (click)="isMenuCollapsed = true">
+                        Upcoming Units for Letting
+                    </a>
+                </li>
+                <li class="nav-item" ngbDropdown routerLinkActive="active">
+                    <a role="button" (click)="false" class="nav-link dropdown-toggle" ngbDropdownToggle>
+                        My Services
+                    </a>
+                    <div ngbDropdownMenu class="dropdown-menu">
+                        <a ngbDropdownItem [routerLink]="cnst.FrontEndUrl.LOGIN" (click)="isMenuCollapsed = true">Login</a>
+                        <a ngbDropdownItem [routerLink]="cnst.FrontEndUrl.PROFILE" (click)="isMenuCollapsed = true">Profile</a>
+                    </div>
+                </li>
+                <li class="nav-item" ngbDropdown routerLinkActive="active">
+                    <a role="button" (click)="false" class="nav-link dropdown-toggle" ngbDropdownToggle>
+                        Help
+                    </a>
+                    <div ngbDropdownMenu class="dropdown-menu">
+                        <a ngbDropdownItem [routerLink]="cnst.FrontEndUrl.FAQ" (click)="isMenuCollapsed = true">FAQ</a>
+                        <a ngbDropdownItem [routerLink]="cnst.FrontEndUrl.USER_GUIDE" (click)="isMenuCollapsed = true">Resources</a>
+                        <a ngbDropdownItem [routerLink]="cnst.FrontEndUrl.PRIVACY_STATE" (click)="isMenuCollapsed = true">Privacy Statement</a>
+                        <a ngbDropdownItem [routerLink]="cnst.FrontEndUrl.USER_AGREEMENT" (click)="isMenuCollapsed = true">User Agreement</a>
+                    </div>
+                </li>
+                <li class="nav-item" routerLinkActive="active">
+                    <a class="nav-link" [routerLink]="cnst.FrontEndUrl.CONTACT_US" (click)="isMenuCollapsed = true">
+                        Contact Us
+                    </a>
+                </li>
+                <li class="nav-item pb-2" routerLinkActive="active">
+                    <a class="nav-link" [routerLink]="cnst.FrontEndUrl.MESSAGE_LIST" (click)="isMenuCollapsed = true">
+                        Messages <em class="fa fa-envelope"></em>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

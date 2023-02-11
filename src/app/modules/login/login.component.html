@@ -1,0 +1,25 @@
+<div class="container-fluid" >
+    <div>
+        <div class="border-top p-2 mb-4 pt-4">
+            <div class="form-group row">
+                <div class="col-sm-12 text-center">
+                    This is a test environment. To simulate a SingPass/CorpPass login, enter the following and click "Login" to proceed.
+                </div>
+                <div class="col-sm-12 text-center text-danger">
+                    As this is just a simple stimulation of SP/CP login there is no validation done, do not key any special characters if not the downstream process will be affected.
+                </div>
+            </div>
+            
+            <div class="form-group row">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control form-control-sm" [(ngModel)]="loginId" placeholder="Login ID" (keyup.enter)="directLogin()">
+                    <sub class="text-danger text-center small">{{error}}</sub>
+                </div>
+                <div class=" col-sm-3">
+                    <button type="submit" class="btn btn-sm btn-success" (click)="directLogin()"><em class="fas fa-sign-in-alt"></em> Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

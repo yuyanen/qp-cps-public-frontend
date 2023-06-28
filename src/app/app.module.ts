@@ -4,9 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+import { NgSelectModule } from '@ng-select/ng-select';
+
 import { LoginComponent } from './modules/login/login.component';
 import { ErrorDialogComponent } from './common/modules/error-dialog/error-dialog.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // Import these modules
 import { HomeComponent } from './modules/home/home.component';
 import { HttpClientModule, HTTP_INTERCEPTORS, HttpClientJsonpModule } from '@angular/common/http';
 import { ErrorDialogService } from './common/services/errordialog.service';
@@ -17,6 +20,7 @@ import { SessionTimeoutComponent } from './common/session-timeout/session-timeou
 import {MainNavComponent} from './modules/main-nav/main-nav.component';
 import { ProfileComponent } from './modules/profile/profile.component';
 import { Error404Component } from './common/error-page/404.component';
+import { NgSelectComponent } from './modules/test/ng-select/ng-select.component';
 
 
 @NgModule({
@@ -30,14 +34,17 @@ import { Error404Component } from './common/error-page/404.component';
     SessionTimeoutDialogComponent,
     MainNavComponent,
     ProfileComponent,
-    Error404Component
+    Error404Component,
+    NgSelectComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    HttpClientModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    NgSelectModule
   ],
   providers: [ErrorDialogService,
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },

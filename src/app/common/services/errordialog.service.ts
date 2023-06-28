@@ -16,4 +16,6 @@ export class ErrorDialogService {
         modalRef.componentInstance.data = data;
         return modalRef;
     }
+
+    
 }

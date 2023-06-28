@@ -1,0 +1,93 @@
+<form [formGroup]="searchForm">
+ 
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card ">
+                
+                <div class="card-body"> 
+                   
+                    <div class="form-group row">
+                        <div class="col-md-7"></div>
+                        <div class="col-md-5">
+                            <button class="btn btn-arrow px-4 btn-block button-width" (click)="clearSearchFilter()">
+                                Clear
+                            </button>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4">Trade</label>
+                        <div class="col-md-8 green-theme">
+                            <ng-select [items]="trades" [multiple]="true" bindLabel="label" [closeOnSelect]="false" groupBy="group"  [selectableGroup]="false"  bindValue="key" formControlName="trades" placeholder="Select Trade">
+                                <ng-template ng-optgroup-tmp let-item="item" let-item$="item$" let-index="index">
+                                    {{item.group | uppercase}}
+                                </ng-template>
+                                <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">
+                                    <input id="item-{{index}}" type="checkbox" [ngModel]="item$.selected" [ngModelOptions]="{ standalone : true }" name="item-{{index}}" />
+                                    <span [title]="item.label"> {{item.label}}</span>
+                                </ng-template>
+                            </ng-select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4">HDB Town</label>
+                        <div class="col-md-8 green-theme">
+                            <ng-select [items]="hdbTowns" [multiple]="true" bindLabel="label" [closeOnSelect]="false" bindValue="key" formControlName="hdbTowns" placeholder="Select Location">
+                                <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">
+                                    <input id="item-{{index}}" type="checkbox" [ngModel]="item$.selected" [ngModelOptions]="{ standalone : true }" name="item-{{index}}" />
+                                    {{item.label}}
+                                </ng-template>
+                            </ng-select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4">Tender Type</label>
+                        <div class="col-md-8 green-theme">
+                            <ng-select [items]="tenderTypes" [multiple]="true" bindLabel="label" [closeOnSelect]="false" bindValue="key" formControlName="tenderTypes" placeholder="Select Tender Type">
+                                <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">
+                                    <input id="item-{{index}}" type="checkbox" [ngModel]="item$.selected" [ngModelOptions]="{ standalone : true }" name="item-{{index}}" />
+                                    {{item.label}}
+                                </ng-template>
+                            </ng-select>
+                        </div>
+                    </div>
+                   
+                    <div class="form-group row">
+                        <label class="col-md-4">Tender Closed Date (From)</label>
+                        <div class="input-group col-md-8">
+                            <input class="form-control shadow-none form-disabled-color" placeholder="dd-mmm-yyyy" name="dpFromDate" [(ngModel)]="fromDate" [readonly]="true" (click)="dpFromDate.toggle()" ngbDatepicker #dpFromDate="ngbDatepicker" [ngModelOptions]="{standalone: true}" (dateSelect)="onDateSelect($event)">
+                            <button class="btn btn-calendar shadow-none btn-outline-secondary fas fa-calendar" (click)="dpFromDate.toggle()" type="button" (dateSelect)="onDateSelect($event)"></button>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-4">Tender Closed Date (To)</label>
+                        <div class="input-group col-md-8">
+                            <input class="form-control shadow-none form-disabled-color" placeholder="dd-mmm-yyyy" name="dpToDate" [(ngModel)]="toDate" [readonly]="true" (click)="dpToDate.toggle()" ngbDatepicker #dpToDate="ngbDatepicker" [ngModelOptions]="{standalone: true}" (dateSelect)="onDateSelect($event)">
+                            <button class="btn btn-calendar shadow-none btn-outline-secondary fas fa-calendar" (click)="dpToDate.toggle()" type="button" (dateSelect)="onDateSelect($event)"></button>
+                        </div>
+
+                    </div>
+                    
+
+                    <span *ngIf="searchForm.get('bidClosingDateFrom').hasError('dateLessThan')" class="text-red">The time period you have selected is invalid. Please select a Tender Closed Date (From) that is earlier than the Tender Closed Date (To).</span>
+
+
+                    <div class="form-group row mt-4">
+                        <div class="col-sm-12 col-md-6 col-lg-6 action-button-padding">
+                            <button class="btn btn-primary btn-filter px-4 btn-block button-width" (click)="applyFilter()" [disabled]="!searchForm.valid">
+                                Apply Filter
+                            </button>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-6 action-button-padding">
+                            <button class="btn btn-outline-primary px-4 btn-block button-width" (click)="closePopover()">
+                                Cancel
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</form>
+

@@ -1,0 +1,74 @@
+// .card-body {
+//    flex: 1 1 auto;
+//     min-height: 1px;
+//    padding: 1.8rem;
+// }
+
+.button-width {
+    width: 100%;
+}
+
+@media (max-width: 767px) {
+    .action-button-padding {
+        padding-bottom: 15px;
+    }
+}
+
+.btn-calendar {
+    border: 1px solid #ced4da;
+    border-radius: 0rem 0.25rem 0.25rem 0rem;
+    border-left: none;
+    height: fit-content;
+    border-color: #0c8188;
+    color: #0c8188;
+}
+
+.btn-calendar:hover {
+    background-color: #0c8188 !important;
+    color: #ffff !important;
+}
+
+.form-disabled-color {
+    background-color: #ffff !important;
+    border: 1px solid #0c8188;
+    color: #0c8188 !important;
+}
+
+::placeholder {
+    color: #0c8188 !important;
+}
+
+
+
+
+.ng-select .ng-arrow-wrapper .ng-arrow {
+    border-color: #0c8188 transparent transparent;
+    border-style: solid;
+    border-width: 5px 5px 2.5px;
+}
+
+.alert-pag:hover {
+    color: white !important;
+}
+
+
+.ng-select.ng-select-opened>.ng-select-container .ng-arrow {
+    top: -2px;
+    border-color: transparent transparent #0c8188;
+    border-width: 0 5px 5px;
+}
+
+
+.ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-value .ng-value-label {
+    display: inline-block;
+    padding: 1px 5px;
+    white-space: normal;
+}
+
+.ng-select,
+.ng-select div,
+.ng-select input,
+.ng-select span {
+    box-sizing: border-box;
+    // white-space: normal;
+}

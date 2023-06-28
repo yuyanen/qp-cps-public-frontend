@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/qp-scs-admin-frontend",
+            "outputPath": "dist/qp-cps-public-frontend",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -68,7 +68,7 @@
               "browserTarget": "qp-scs-admin-frontend:build:production"
             },
             "development": {
-              "browserTarget": "qp-scs-admin-frontend:build:development"
+              "browserTarget": "qp-cps-public-frontend:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "qp-scs-admin-frontend:build"
+            "browserTarget": "qp-cps-public-frontend:build"
           }
         },
         "test": {

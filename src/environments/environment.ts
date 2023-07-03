@@ -7,7 +7,7 @@ export const environment = {
     appEnv: 'DEV',
 
     production: false,
-    apiBaseUrl: "http://localhost:9000/webservice-public/api/protected",
+    apiBaseUrl: "http://localhost:9000/webservice-public/api",
 
     webPortalUrl: 'http://localhost:4200/',
 };

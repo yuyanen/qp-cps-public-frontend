@@ -7,14 +7,53 @@ import { HomeComponent } from './modules/home/home.component';
 import { ProfileComponent } from './modules/profile/profile.component';
 import { Error404Component } from './common/error-page/404.component';
 import { NgSelectComponent } from './modules/test/ng-select/ng-select.component';
+import {LandingPageComponent} from '../app/modules/landing-page/landing-page.component';
+import { BulletinListingComponent } from './bulletin/bulletin-listing/bulletin-listing.component';
+import { BulletinViewComponent } from './bulletin/bulletin-view/bulletin-view.component';
 
 const routes: Routes = [
 
-  { path: '', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'test', component: NgSelectComponent },
+  // { path: '', component: HomeComponent },
+  { path: '', component: LandingPageComponent, },
+  // { path: 'login', component: LoginComponent },
+  // { path: 'profile', component: ProfileComponent },
+  // { path: 'test', component: NgSelectComponent },
+  {
+    path: '',
+    data: { breadCrum: 'Home' },
+    children: [
+        {
+            path: 'view-products/:view-products',
+            data: { breadCrum: 'View Products' },
+            children: [
+                // {
+                //     path: 'unit-details/:id', component: PqmUnitDetailsComponent,
+                //     data: { breadCrum: 'View Unit' },
+
+                // },
+                // {
+                //     path: 'ebid-unit-details/:id', component: EbidUnitDetailsComponent,
+                //     data: { breadCrum: 'View Unit' },
+                // },
+                // {
+                //     path: 'ebid-unit-details/:id',
+                //     data: { breadCrum: 'View Unit' },
+                //     children: [
+                //         {
+                //             path: 'my-tender/:id', component: MyTenderComponent, canActivate: [AuthGuard],
+                //             data: { breadCrum: 'My Tender' },
+
+                //         }
+                //     ]
+                // },
+                
+            ]
+        },
+    ]
+  },
   { path: '**', component: Error404Component },
+  { path: 'view-products/:view-products', component: LandingPageComponent, },
+
 
 ];
 

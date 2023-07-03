@@ -1,0 +1,61 @@
+<section class="bulletin-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2><strong>Bulletin Board</strong></h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <form [formGroup]="searchForm" class="row default-theme">
+                    <div class="form-group col-lg col-md-12 green-theme">
+                        <label class="col-form-label form-label">Select Year</label>
+                        <ng-select [closeOnSelect]="false" [multiple]="true" [items]="years" [searchable]="false" [clearable]="false" formControlName="year" placeholder="All Years">
+                        </ng-select>
+                    </div>
+                    <div class="form-group col-lg col-md-12">
+                        <label class="col-form-label form-label">From</label>
+                        <div class="input-group">
+                            <input class="form-control shadow-none form-disabled-color" placeholder="dd-mmm-yyyy" name="dpFromDate" [(ngModel)]="fromDate" [readonly]="true" (click)="dpFromDate.toggle()" ngbDatepicker #dpFromDate="ngbDatepicker" [ngModelOptions]="{standalone: true}" (dateSelect)="onDateSelect($event)">
+                            <button class="btn btn-calendar shadow-none btn-outline-secondary fas fa-calendar" (click)="dpFromDate.toggle()" type="button" (dateSelect)="onDateSelect($event)"></button>
+                        </div>
+                    </div>
+                    <div class="form-group col-lg col-md-12">
+                        <label class="col-form-label form-label">To</label>
+                        <div class="input-group">
+                            <input class="form-control shadow-none form-disabled-color" placeholder="dd-mmm-yyyy" name="dpToDate" [(ngModel)]="toDate" [readonly]="true" (click)="dpToDate.toggle()" ngbDatepicker #dpToDate="ngbDatepicker" [ngModelOptions]="{standalone: true}" (dateSelect)="onDateSelect($event)">
+                            <button class="btn btn-calendar shadow-none btn-outline-secondary fas fa-calendar" (click)="dpToDate.toggle()" type="button" (dateSelect)="onDateSelect($event)"></button>
+                        </div>
+                    </div>
+                    <div class="form-group col-md col-sm-12 align-self-end">
+                        <div class="input-group">
+                            <button class="btn btn-primary col-sm-12" (click)="loadBulletinBoard(false)" [disabled]="!searchForm.valid">Go</button>
+                        </div>
+                    </div>
+                </form>
+
+                <span *ngIf="searchForm.get('publishDateFrom').hasError('dateLessThan')" class="text-red">The time period you have selected is invalid. Please select a From Date that is earlier than the To Date.</span>
+
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12" *ngFor="let bulletin of bulletins">
+                <div class="h5"><strong>{{bulletin.title}}</strong></div>
+                <p>{{bulletin.effectiveDate}}</p>
+                <div class="block-ellipsis mb-2" [innerHTML]="bulletin.content">
+                </div>
+                <a [routerLink]="cnst.FrontEndUrl.BULLETIN_VIEW + '/' + bulletin.id">
+                    <em class="fas fa-chevron-circle-right fa-lg color-red"></em> Read More
+                </a>
+                <hr>
+            </div>
+        </div>
+
+        <div class="row mt-4" id="navigation">
+            <div class="col-12">
+                <app-pagination [filter]="filter" (pageChange)="loadBulletinBoard(false)"></app-pagination>
+            </div>
+        </div>
+    </div>
+</section>

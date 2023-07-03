@@ -1,0 +1,45 @@
+<section class="hb-home" id="banner-img" [ngStyle]="updateBackgroundImg()">
+    <swiper class="swiper-container gallery-top" [navigation]=" { nextEl: '.banner-next', prevEl: '.banner-prev'}" [thumbs]="{ swiper: bannerThumbs }" (activeIndexChange)="onActiveIndexChange()"
+        (swiper)="onGallerySwiper($event)" [config]="config">
+        <ng-container *ngFor="let slide of banners">
+            <ng-template class="swiper-slide" swiperSlide>
+                <div class="pb-5 pt-3 banner-image" (mouseenter)="pauseSlider()" (mouseleave)="resumeSlider()">
+                    <div class="container">
+                        <h1 class="row col-auto">
+                            {{slide.title}}
+                        </h1>
+                        <a [routerLink]="cnst.FrontEndUrl.BULLETIN_VIEW + '/' + slide.id" class="btn btn-danger btn-lg font-weight-bold">
+                            <em class="fas fa-chevron-circle-right mr-1"></em> {{slide.buttonText}} <span class="hidden">to view more details of the current units</span>
+                        </a>
+                    </div>
+                </div>
+            </ng-template>
+        </ng-container>
+    </swiper>
+</section>
+<section class="hb-slider" *ngIf="banners">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <swiper class="gallery-thumbs thumnail-slider-box p-3" [slidesPerView]="bannerSlidesPerView" [spaceBetween]="15" [freeMode]="true" [watchSlidesVisibility]="true"
+                    [watchSlidesProgress]="true" (swiper)="onThumbsSwiper($event)">
+                    <ng-container *ngFor="let slide of banners">
+                        <ng-template class="swiper-slide" swiperSlide>
+                            <a href="#">
+                                <div class="card card-slider-home">
+                                    <div class="card-body px-0 py-2">
+                                        <div class="h3 card-title">{{slide.title}}</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </ng-template>
+                    </ng-container>
+                </swiper>
+              
+                <em class="swiper-button-next banner-next"></em>
+                <em class="swiper-button-prev banner-prev"></em>
+            </div>
+        </div>
+    </div>
+</section>
+

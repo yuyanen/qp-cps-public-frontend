@@ -1,5 +1,6 @@
 import { environment } from '../../environments/environment';
 
+export const apiBaseUrl = environment.apiBaseUrl;
 
 export const maxLengthStr = 255;
 export const maxLengthNumerals = 16;
@@ -138,7 +139,7 @@ export class FormErrorMessages {
 }
 
 export class FrontEndUrl {
-    public static VIEW_PROPERTIES = "/view-properties/true";
+    public static VIEW_PRODUCTS = "/view-products/true";
     public static UPCOMING_UNITS = "/upcoming-units";
     public static FAQ = "/faq";
     public static USER_GUIDE = "/user-guides";
@@ -150,8 +151,8 @@ export class FrontEndUrl {
     public static MESSAGE_LIST = "/message-listing";
     public static MESSAGE_VIEW = FrontEndUrl.MESSAGE_LIST + "/message-view";
 
-    public static TENDERUNIT_EBID = FrontEndUrl.VIEW_PROPERTIES + "/ebid-unit-details";
-    public static TENDERUNIT_PQM = FrontEndUrl.VIEW_PROPERTIES + "/unit-details";
+    // public static TENDERUNIT_EBID = FrontEndUrl.VIEW_PROPERTIES + "/ebid-unit-details";
+    // public static TENDERUNIT_PQM = FrontEndUrl.VIEW_PROPERTIES + "/unit-details";
     public static TENDERUNIT_PQM_FORM = "/unit-tender-form";
     public static TENDERUNIT_PQM_ACK = "/submission-acknowledgement";
     public static EBID_RESULT_LIST = "/real-time-listing";

@@ -1,0 +1,27 @@
+a {
+    color: black
+}
+
+.btn-calendar {
+    border: 1px solid #ced4da;
+    border-radius: 0rem 0.25rem 0.25rem 0rem;
+    border-left: none;
+    height: fit-content;
+    border-color: #0c8188;
+    color: #0c8188;
+}
+
+.btn-calendar:hover {
+    background-color: #0c8188 !important;
+    color: #ffff !important;
+}
+
+.form-disabled-color {
+    background-color: #ffff !important;
+    border: 1px solid #0c8188;
+    color: #0c8188 !important;
+}
+
+::placeholder {
+    color: #0c8188 !important;
+}

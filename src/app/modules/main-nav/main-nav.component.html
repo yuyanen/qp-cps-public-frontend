@@ -1,6 +1,6 @@
 <nav class="navbar navbar-bottom navbar-expand-md py-0">
     <div class="container">
-        <a role="button" class="navbar-brand m-2 ml-3 text-white font-weight-bold" (click)="isMenuCollapsed = !isMenuCollapsed" (click)="false">HDB Place2Lease</a>
+        <a role="button" class="navbar-brand m-2 ml-3 text-white font-weight-bold" (click)="isMenuCollapsed = !isMenuCollapsed" (click)="false">Qingprint Home</a>
 
         <button class="navbar-toggler text-white mr-3" aria-label="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
             <em class="fas fa-caret-down"></em>
@@ -9,12 +9,12 @@
             <ul class="navbar-nav w-100 align-items-stretch nav-fill main-nav">
                 <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                     <a role="button" class="nav-link" routerLink="" (click)="isMenuCollapsed = true">
-                        HDB Place2Lease
+                        Qingprint Home
                     </a>
                 </li>
                 <li class="nav-item" routerLinkActive="active">
-                    <a class="nav-link" [routerLink]="cnst.FrontEndUrl.VIEW_PROPERTIES" (click)="isMenuCollapsed = true">
-                        View Properties
+                    <a class="nav-link" [routerLink]="cnst.FrontEndUrl.VIEW_PRODUCTS" (click)="isMenuCollapsed = true">
+                        View Products
                     </a>
                 </li>
                 <li class="nav-item" ngbDropdown routerLinkActive="active">
@@ -25,11 +25,6 @@
                         <a ngbDropdownItem [routerLink]="cnst.FrontEndUrl.EBID_RESULT_LIST" (click)="isMenuCollapsed = true">E-bidding</a>
                         <a ngbDropdownItem [routerLink]="cnst.FrontEndUrl.PQM_RESULT_LIST" (click)="isMenuCollapsed = true">PQM / Price Only</a>
                     </div>
-                </li>
-                <li class="nav-item" routerLinkActive="active">
-                    <a class="nav-link" [routerLink]="cnst.FrontEndUrl.UPCOMING_UNITS" (click)="isMenuCollapsed = true">
-                        Upcoming Units for Letting
-                    </a>
                 </li>
                 <li class="nav-item" ngbDropdown routerLinkActive="active">
                     <a role="button" (click)="false" class="nav-link dropdown-toggle" ngbDropdownToggle>

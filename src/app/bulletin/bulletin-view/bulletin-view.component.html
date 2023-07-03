@@ -1,0 +1,40 @@
+<section class="bulletin-content">
+
+    <div class="container" style="font-family:Cabin;">
+        <div class="row">
+            <div class="col-12 mb-2 Arial">
+                <h2><strong> {{bulletin.title}}</strong> </h2>
+            </div>
+            <div class="col-12 mb-2">
+                <p>Published Date: {{bulletin.effectiveDate}}</p>
+            </div>
+            <div class="col-12" [innerHTML]="bulletin.content | safeHtml"></div>
+
+        </div>
+    </div>
+</section>
+<section class="bulletin-attachment" *ngIf="bulletin.attachments?.length > 0">
+    <div class="container" style="font-family:Cabin;">
+        <div class="row">
+            <div class="col-12">
+                <p>{{bulletin.attachments?.length}} attachments</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col">
+                <div *ngFor="let attachment of bulletin.attachments">
+
+                    <button type="button" class="btn btn-outline-dark mb-3 w-100">
+                        <div class="row col">
+                            <em class="fa-2x" [ngClass]="fileUtil.checkFileType(attachment.extension)"></em>
+                            <div class="col text-left" (click)="download(attachment.fileId,attachment.filename, attachment.hash)">{{attachment.originalFilename}}
+                                <br> {{attachment.fileSize | filesize}}
+                            </div>
+                            <em class="fas fa-download"></em>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,6 @@
+<div class="d-flex red" *ngIf="filter.collectionSize > 0">
+    <ngb-pagination [(page)]="filter.page" [pageSize]="filter.pageSize" [collectionSize]="filter.collectionSize" (pageChange)="loadData()" [maxSize]="5" [rotate]="true" [ellipses]="false" size="sm">
+        <ng-template ngbPaginationPrevious><em class="fas fa-angle-left"></em></ng-template>
+        <ng-template ngbPaginationNext><em class="fas fa-angle-right"></em></ng-template>
+    </ngb-pagination>
+</div>

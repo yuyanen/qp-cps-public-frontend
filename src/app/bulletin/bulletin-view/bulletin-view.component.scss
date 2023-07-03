@@ -1,0 +1,33 @@
+h2 {
+    font-size: 36px;
+    line-height: 37px;
+    letter-spacing: 0.04px;
+    color: #383838;
+}
+
+.bulletin-attachment {
+    font-family: "Cabin", sans-serif;
+    padding: 50px 0px;
+    background: #F1F1F1;
+}
+
+.bulletin-attachment .btn i {
+    margin: auto;
+}
+
+.bulletin-attachment .btn i:first-child {
+    background: #FFFFFF;
+    border-radius: 50%;
+    padding: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #CC0001;
+}
+
+.bulletin-attachment .btn i:last-child {
+    color: #0c8188;
+}
+
+:host ::ng-deep img {
+    max-width: -webkit-fill-available;
+}

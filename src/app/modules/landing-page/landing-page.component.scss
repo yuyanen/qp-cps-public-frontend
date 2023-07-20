@@ -1,0 +1,67 @@
+
+::ng-deep .swiper-button-prev {
+    left: 2% !important;
+}
+
+::ng-deep .swiper-button-next {
+    right: 2% !important;
+}
+
+:host ::ng-deep .swiper-button-prev {
+    background-image: url("../../assets/images/icon/arrow-left.png");
+    margin: auto;
+    background-color: transparent !important;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+
+    @media (max-width: 767.98px) {
+        background-size: 45px;
+        height: 45px;
+        width: 45px;
+    }
+
+    @media (min-width: 768px) and (max-width: 991.98px) {
+        background-size: 60px;
+        height: 60px;
+        width: 60px;
+    }
+
+    @media (min-width: 992px) {
+        background-size: 30px;
+        height: 30px;
+        width: 30px;
+    }
+}
+
+:host ::ng-deep .swiper-button-next {
+    background-image: url("../../assets/images/icon/arrow-right.png");
+    margin: auto;
+    background-color: transparent !important;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+
+    @media (max-width: 767.98px) {
+        background-size: 45px;
+        height: 45px;
+        width: 45px;
+    }
+
+    @media (min-width: 768px) and (max-width: 991.98px) {
+        background-size: 60px;
+        height: 60px;
+        width: 60px;
+    }
+
+    @media (min-width: 992px) {
+        background-size: 30px;
+        height: 30px;
+        width: 30px;
+    }
+}
+
+:host ::ng-deep .swiper-button-prev:after,
+:host ::ng-deep .swiper-button-next:after {
+    color: transparent !important;
+}

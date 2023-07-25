@@ -48,7 +48,20 @@ const routes: Routes = [
                 // },
                 
             ]
-        },
+        },{
+          path: 'bulletin-listing', component: BulletinListingComponent,
+          data: { breadCrum: 'Bulletin Board', hideInSiteMap: true },
+          }, 
+          {
+          path: 'bulletin-listing',
+          data: { breadCrum: 'Bulletin Board' },
+          children: [
+              {
+                  path: 'bulletin-view/:id', component: BulletinViewComponent,
+                  data: { breadCrum: 'View Bulletin' },
+              }
+          ]
+      },
     ]
   },
   { path: '**', component: Error404Component },

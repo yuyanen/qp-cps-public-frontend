@@ -88,7 +88,7 @@ loadTopBanners() {
             }
         ]
     }
-    this.banners = data2.items;
+    this.banners = data.items;
 
   });
 

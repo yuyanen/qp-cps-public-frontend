@@ -8,7 +8,7 @@
 }
 
 :host ::ng-deep .swiper-button-prev {
-    background-image: url("../../assets/images/icon/arrow-left.png");
+    background-image: url("../../../assets/images/icon/arrow-left.png");
     margin: auto;
     background-color: transparent !important;
     top: 50%;
@@ -35,7 +35,7 @@
 }
 
 :host ::ng-deep .swiper-button-next {
-    background-image: url("../../assets/images/icon/arrow-right.png");
+    background-image: url("../../../assets/images/icon/arrow-right.png");
     margin: auto;
     background-color: transparent !important;
     top: 50%;

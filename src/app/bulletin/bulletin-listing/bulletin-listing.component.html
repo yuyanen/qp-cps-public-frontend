@@ -5,7 +5,7 @@
                 <h2><strong>Bulletin Board</strong></h2>
             </div>
         </div>
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-12">
                 <form [formGroup]="searchForm" class="row default-theme">
                     <div class="form-group col-lg col-md-12 green-theme">
@@ -38,8 +38,9 @@
 
                 <hr>
             </div>
-        </div>
-        <div class="row">
+        </div>-->
+        <div class="row"> <hr></div>
+        <div class="row"> 
             <div class="col-sm-12" *ngFor="let bulletin of bulletins">
                 <div class="h5"><strong>{{bulletin.title}}</strong></div>
                 <p>{{bulletin.effectiveDate}}</p>

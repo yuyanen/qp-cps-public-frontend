@@ -40,7 +40,7 @@ export class LandingPageComponent implements OnInit {
 
 loadTopBanners() {
 
-  let bulletinFilter = this.commonService.getSearchDto({ page: 1 }, { bulletinType: cnst.AnnouncementType.TOP_BANNER, });
+  let bulletinFilter = this.commonService.getSearchDto({ page: 1,pageSize:10 }, { bulletinType: cnst.AnnouncementType.TOP_BANNER, });
   this.bulletinListingService.loadBulletinListing(bulletinFilter).subscribe(data => {
   //    this.banners = data.items;
        var data2= {

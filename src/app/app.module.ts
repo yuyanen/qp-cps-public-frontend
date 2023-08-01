@@ -32,6 +32,8 @@ import { ShowIfGrantedDirective } from './common/directives/show-if-granted.dire
 import { SortableDirective } from './common/directives/sortable.directive';
 import { NumbersOnlyDirective } from './common/directives/numbers-only.directive';
 import { SwiperModule } from 'swiper/angular';
+import { ScrollToTopComponent } from './common/scroll-to-top/scroll-to-top.component';
+import { FooterComponent } from './modules/footer/footer.component';
 
 
 @NgModule({
@@ -61,6 +63,8 @@ import { SwiperModule } from 'swiper/angular';
     FileSizePipe,
     AreaSqFtUnitPipe,
     SafeHtmlPipe,
+    ScrollToTopComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

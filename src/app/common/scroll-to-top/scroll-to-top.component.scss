@@ -1,0 +1,29 @@
+/* Global styling for sortable headers */
+.scroll-to-top {
+    position: fixed;
+    z-index: 9999;
+    /* Make sure it does not overlap */
+    bottom: 25px;
+    right: 25px;
+    opacity: 0;
+    transition: all .2s ease-in-out;
+    color: #fff;
+    /* Text color */
+}
+
+.show-scrollTop {
+    opacity: 0.6 !important;
+    transition: all .2s ease-in-out;
+}
+
+.scroll-to-top:hover {
+    opacity: 1 !important;
+    color: #fff;
+    /* Text color */
+}
+
+.back-to-top {
+    border-radius: 2rem;
+    font-size: 1rem;
+    line-height: 1.8;
+}
